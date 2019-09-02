@@ -1,6 +1,5 @@
-import sys
-from math import *
 from gameobjects.util import format_number
+from math import *
 
 
 class Vector3(object):
@@ -270,7 +269,7 @@ class Vector3(object):
         ox, oy, oz = rhs
         return self.from_floats(x - ox, y - oy, z - oz)
 
-    def _isub__(self, rhs):
+    def __isub__(self, rhs):
         """Subtracts another vector (or a collection of 3 numbers) from this
         vector.
 
@@ -369,7 +368,7 @@ class Vector3(object):
         else:
             return self.from_floats(x * lhs, y * lhs, z * lhs)
 
-    def __div__(self, rhs):
+    def __truediv__(self, rhs):
         """Return the result of dividing this vector by another vector, or a scalar (single number)."""
 
         x, y, z = self._v
@@ -443,7 +442,7 @@ class Vector3(object):
 
         return self.copy()
 
-    def __nonzero__(self):
+    def __bool__(self):
 
         x, y, z = self._v
         return bool(x or y or z)
@@ -702,3 +701,10 @@ if __name__ == "__main__":
     print(Vector3(1, 2, 3).scale((2, 4, 6)))
 
     print(bool(v1))
+
+    print(v1 / 3)
+    print(v1 / v2)
+
+    print(v1)
+    v1 -= v2
+    print(v1)

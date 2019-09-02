@@ -1,6 +1,6 @@
-from math import sin, cos, tan, pi, radians
 from gameobjects.util import format_number
 from gameobjects.vector3 import Vector3
+from math import sin, cos, tan, pi, radians
 
 
 # import psyco

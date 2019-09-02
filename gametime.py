@@ -80,7 +80,7 @@ class GameClock(object):
         This method may be overriden."""
 
         import time
-        return time.clock()
+        return time.perf_counter()
 
     def get_fps(self):
 
@@ -152,11 +152,9 @@ if __name__ == "__main__":
     while t.virtual_time < 2.0:
 
         for (frame_count, game_time) in t.update():
-            print
-            "Game frame #%i, %2.4f" % (frame_count, game_time)
+            print("Game frame #%i, %2.4f" % (frame_count, game_time))
 
         virtual_time = t.virtual_time
-        print
-        "\t%2.2f%% between game frame, time is %2.4f" % (t.between_frame * 100., virtual_time)
+        print("\t%2.2f%% between game frame, time is %2.4f" % (t.between_frame * 100., virtual_time))
 
         time.sleep(0.2)  # Simulate time to render frame

@@ -1,5 +1,5 @@
-from math import sqrt
 from gameobjects.util import format_number
+from math import sqrt
 
 
 class Vector2(object):
@@ -184,7 +184,7 @@ class Vector2(object):
         xx, yy = lhs
         return self.from_floats(xx - x, yy - y)
 
-    def _isub__(self, rhs):
+    def __isub__(self, rhs):
 
         xx, yy = rhs
         v = self._v
@@ -224,7 +224,7 @@ class Vector2(object):
             yy = lhs
         return self.from_floats(x * xx, y * yy)
 
-    def __div__(self, rhs):
+    def __truediv__(self, rhs):
         """Return the result of dividing this vector by a scalar or a vector-list object."""
         x, y = self._v
         if hasattr(rhs, "__getitem__"):
@@ -265,7 +265,7 @@ class Vector2(object):
 
         return self.copy()
 
-    def __nonzero__(self):
+    def __bool__(self):
 
         x, y = self._v
         return bool(x or y)
@@ -340,3 +340,7 @@ if __name__ == "__main__":
     v1 = Vector2(1, 2)
     print(v1('yx'))
     print(Vector2.from_points((5, 5), (10, 10)))
+    print(v1 is True, v1 is False)
+    print(v1 / 2)
+    v2 = Vector2(5, 5)
+    print(v1 / v2)

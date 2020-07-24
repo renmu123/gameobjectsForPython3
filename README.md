@@ -1,23 +1,6 @@
-# gameobjectsForPython3
+下载该文件输入以下代码进行安装
 
-bugs fixed for Python 3 
+    python setup.py install
+如果有问题，请发 issue
 
-soure code from:
-
-Metadata-Version: 1.0
-Name: gameobjects
-Version: 0.0.3
-Summary: Classes for help wth game creation
-Home-page: http://code.google.com/p/gameobjects/
-Author: Will McGugan
-Author-email: will@willmcgugan.com
-License: public domain
-Download-URL: http://code.google.com/p/gameobjects/downloads/list
-Description: UNKNOWN
-Platform: any
-Classifier: Development Status :: 2 - Pre-Alpha
-Classifier: Intended Audience :: Developers
-Classifier: Programming Language :: Python
-Classifier: License :: Public Domain
-Classifier: Operating System :: OS Independent
-Classifier: Topic :: Games/Entertainmen
+Originally Programmed by Will McGuga
